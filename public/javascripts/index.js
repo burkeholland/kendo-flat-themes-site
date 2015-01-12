@@ -13,8 +13,10 @@
     window.location = 'viewer';
   }
 
-  var iframe = $('#viewer').get(0);
-  var currentTheme = null;
+  var iframe = $('#viewer').get(0),
+      currentTheme = null,
+      id = 0;
+
 
   var model = kendo.observable({
     
@@ -57,7 +59,7 @@
 
     download: function() {
       monitor.trackFeature('Download Theme');
-      window.location ='/themes/download/' + currentTheme;
+      window.location ='/themes/download?css=' + currentTheme;
     },
     
     showArrow: function() {
