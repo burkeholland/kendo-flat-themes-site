@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Kendo Flat Themes
+
+    link(rel="shortcut icon" href="/favicon.ico" type="image/x-icon")
+    link(rel="icon" href="/favicon.ico" type="image/x-icon")
+
+    link(rel="stylesheet", href="libs/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.css")
+    link(rel="stylesheet", href="libs/kendo-ui-core/styles/kendo.common-bootstrap.min.css")
+    link(rel="stylesheet", href="libs/kendo-ui-core/styles/kendo.bootstrap.min.css")
+    link(rel="stylesheet", href="stylesheets/style.css")    
+  
+  body(style="opacity:0;")
+
+    block content
+
+    script(src="//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js")
+    script(src="libs/eqatec/EqatecMonitor.min.js")
+    script(src="//code.jquery.com/jquery-2.1.1.min.js")
+    script(src="javascripts/kendo.custom.min.js")
+    script(src="javascripts/index.js")
+
+    script. 
+      (function() {
+        $(document.body).css('opacity', 1);
+      }());

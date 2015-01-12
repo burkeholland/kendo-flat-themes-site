@@ -1,0 +1,110 @@
+html, body {
+  height: 100%;
+  transition: opacity 300ms;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+h1 {
+  color: #bdbdbd;
+}
+
+.wrap {
+  background-image: url("../images/device.png");
+  width: 395px;
+  height: 715px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#viewer {
+  border-width: 0;
+  width: 319px;
+  height: 567px;
+  background-color: #fff;
+  margin: 75px 0 0 38px;
+}
+
+.header {
+  margin-top: -40px;
+  font-weight: bold;
+  text-align: center
+}
+
+.header h1 {
+  font-size: 72px;
+  font-weight: bolder;
+}
+
+.step {
+  display: table;
+  height: 84px;
+}
+
+.step p {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#select {
+  position: relative;
+  margin: auto;
+  width: 395px;
+  margin-bottom: 20px;
+}
+
+#select span.k-dropdown {
+  width: 280px;
+  margin-right: 10px;
+}
+
+.arrow {
+  position: absolute;
+  margin-left: 320px;
+  margin-top: -20px;
+  transition: opacity 300ms;
+  opacity: 0;
+}
+
+.floating{
+  -webkit-animation-name: Floatingx;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-name: Floating;
+  -moz-animation-duration: 3s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes Floatingx{
+  from {-webkit-transform:translate(0, 0px);}
+  65% {-webkit-transform:translate(0, 15px);}
+  to {-webkit-transform: translate(0, -0px);    }    
+}
+    
+@-moz-keyframes Floating{
+  from {-moz-transform:translate(0, 0px);}
+  65% {-moz-transform:translate(0, 15px);}
+  to {-moz-transform: translate(0, -0px);}    
+}
+
+.twitter-share-button.twitter-tweet-button.twitter-share-button.twitter-count-horizontal {
+  margin: 0 0 -5px;
+}
+
+.baseColor {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  float: left;
+  margin-top: 3px;
+  margin-right: 10px;
+}

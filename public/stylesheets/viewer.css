@@ -1,0 +1,15 @@
+.example {
+  margin: 1rem;
+}
+.km-widgets:after,
+.km-widgets:before {
+  content: "\e0c5";
+}
+.km-hamburger:after,
+.km-hamburger:before {
+  content: "\E077";
+}
+.page > img {
+  width: 100%;
+  height: auto;
+}

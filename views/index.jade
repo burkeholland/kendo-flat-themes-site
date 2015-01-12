@@ -1,0 +1,61 @@
+extends layout
+
+block content
+
+  .container.header
+    .row
+      .col-xs-12
+        div.page-header
+          h1 Kendo Flat Themes
+          p Extended Flat Themes For Kendo UI Mobile 
+            a(href="https://twitter.com/share" class="twitter-share-button" data-text="Extended flat themes for @KendoUI Mobile" data-via="burkeholland")  Tweet
+            script.
+              !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+  .container.content
+    .row
+      .col-sm-6
+        h2 Get Started
+        .row
+          .col-xs-1
+            h1 1 
+          .col-xs-11.step
+            p Select a theme you like and checkout how it looks on all the different widgets
+        .row
+          .col-xs-1
+            h1 2
+          .col-xs-11.step
+              p Click the 
+                button(data-role="button", data-bind="click: showArrow") Download
+                span  button to download the theme
+        .row
+          .col-xs-1
+            h1 3
+          .col-xs-11.step
+            p Add the CSS file to your project and place it AFTER kendo.mobile.flat.css in your Kendo UI Mobile Project
+        .row
+          .col-xs-11.col-xs-push-1
+            pre
+              code.language-markup.
+                &lt;link rel=&quot;stylesheet&quot; href=&quot;kendo.mobile.flat.min.css&quot;&gt;
+                &lt;!-- your theme file goes here --&gt;
+
+                &lt;script&gt;
+                  // specify the flat skin for the mobile application
+                  new kendo.mobile.Application(document.body, { skin: &#039;flat&#039; });
+                &lt;/script&gt;
+      .col-sm-6
+        .row
+          .col-sm-12
+            #select
+              select(data-role="dropdownlist", data-bind="source: themes, events: { change: change }", data-text-field="Name", data-value-field="Id" data-template="themesTemplate")
+              button(data-role="button", data-bind="click: download, enabled: downloadEnabled") Download
+        .row
+          .col-sm-12
+            .wrap
+              img.arrow.floating(src="images/arrow-up.png", data-bind="style: { opacity: arrowOpacity }")
+              iframe#viewer(src='viewer', frameborder="0")
+
+  script(type="text/x-kendo-template", id="themesTemplate")
+    div.baseColor(style="background-color: #: BaseColor #")
+    div  #: Name # 

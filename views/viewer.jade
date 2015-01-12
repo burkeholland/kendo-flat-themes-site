@@ -1,0 +1,127 @@
+doctype html
+html
+  head
+    title Kendo UI Mobile Flat Themes
+    link(rel='stylesheet', href='/libs/kendo-ui-core/styles/kendo.mobile.flat.min.css')
+    link(rel='stylesheet', href='' + url)
+    link(rel="stylesheet", href="/stylesheets/viewer.css")
+  body
+    div#home(data-role="view", data-layout="main", data-model='home' data-bind='events: { show: changeTitle }' data-title='Themes')
+        ul(data-role='listview', data-bind='source: themes', data-template='themesTemplate')
+    div#widgets(data-role="view", data-layout="main", data-title="Widgets" data-model="widgets")
+      div(data-role='header')
+        div(data-role='navbar')
+          span(data-role='view-title')
+          a(data-role='button' data-align='right' data-rel='actionsheet' href='#actionSheet' data-icon='more') 
+          a(data-role="button" data-align="left" data-rel="drawer", href="#drawer" data-icon="hamburger")
+      ul(data-role='actionsheet', id='actionSheet')
+        li.km-actionsheet-title Items
+        li 
+          a Item 1
+        li 
+          a Item 2
+        li 
+          a Item 3
+      div#modal(data-role='modalview' data-title='ModalView', style='width: 90%; height: 200px')
+        div(data-role='header')
+          div(data-role='navbar')
+            span(data-role='view-title')
+            a(data-role='button', data-align='right' data-bind="click: closeModal") Close
+        h2 A ModalView
+        p Lorum ipsum
+      h3 ListView
+      ul(data-role='listview')
+        li
+          a Item 1
+        li
+          a Item 2
+        li
+          a Item 3
+      h3 Inset ListView
+      ul(data-role='listview' data-style='inset')
+        li
+          a Item 1
+        li
+          a Item 2
+        li
+          a Item 3
+      h3 Grouped ListView
+      ul(data-role='listview' data-style='inset' data-type="group")
+        li Group 1
+          ul
+            li
+              a Item 1
+            li
+              a Item 2
+            li
+              a Item 3
+        li Group 2
+          ul
+            li
+              a Item 1
+            li
+              a Item 2
+            li
+              a Item 3
+      h3 Button
+      .example
+        a(data-role='button') Button
+      h3 ButtonGroup
+      ul(data-role='buttongroup')
+        li Item 1
+        li Item 2
+        li Item 3
+      h3 Switch
+      .example
+        input(data-role='switch')
+      h3 Loader
+      .example
+        a(data-role="button" data-bind="click: showLoader") Loader
+        span  Loader will show for 
+          b(data-bind='html: showFor') 
+          span  seconds
+      h3 ModalView
+      .example
+        a(data-role="button" href="#modal" data-rel="modalview") Open Modal
+      h3 ScrollView
+      .example
+        div(data-role="scrollview")
+          div.page(data-role="page")
+            img(src="images/grumpy1.jpg")
+          div.page(data-role="page")
+            img(src="images/grumpy2.jpg")
+          div.page(data-role="page")
+            img(src="images/grumpy3.jpg")
+      p Lorem ipsum Amet anim Excepteur laborum nostrud laboris exercitation sint magna sunt proident sit aliqua adipisicing ut.
+
+    #drawer(data-role="drawer" data-views="[ 'widgets' ]")
+      div(data-role="header")
+        div(data-role="navbar")
+          div(data-role="view-title") Drawer
+      ul(data-role="listview")
+        li
+          a Item 1
+        li
+          a Item 2
+        li
+          a Item 3
+
+    #about(data-role="view", data-layout="main", data-title="About")
+
+    div(data-id="main", data-role="layout" data-model='layout')
+      div(data-role="header")
+        div(data-role="navbar")
+          span(data-role="view-title")
+      div(data-role="footer")
+        div(data-role="tabstrip")
+          a#homeTab(href="#home", data-icon="home") Home
+          a(href="#widgets", data-icon="widgets" data-badge='18') Widgets
+          a(href="#about", data-icon="about") About
+
+    script#themesTemplate(type='text/x-kendo-template')
+      a(href='viewer?id=#: CSSFile #')#: Name #
+
+    script(src='/libs/kendo-ui-core/js/jquery.min.js')
+    script(src='/libs/kendo-ui-core/js/kendo.ui.core.min.js')  
+    script(src='javascripts/viewer.js')
+      
