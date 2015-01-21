@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path');
 var files = require('../data/files.js');
 var download = require('../services/download.js');
 var themes = require('../data/themes.js');
@@ -23,28 +24,9 @@ router.get('/download', function(req, res) {
  
   var fileName = req.query.css;
 
-  /* 
-  if (id) {
+  var file = path.resolve(__dirname, '..') + '/public/stylesheets/themes/' + fileName; 
 
-    files.getById(id).then(function(file) {
-    
-      console.log(file);
-
-      var cssFile = '../public/stylesheet/themes/' + file.CSSFileName;
-
-      // send the file down to the client
-      res.setHeader('Content-disposition', 'attachment; filename=' + file.result.Filename);
-
-      // download.getFileByUri(file.result.Filename, file.result.Uri).then(function(css) {
-      var filestream = fs.createReadStream(cssFile);
-      filestream.pipe(res);
-      // });
-    });
-
-  }
-  */
-
-  var file = './public/stylesheets/themes/' + fileName;
+  console.log(file);
 
   // send the file down to the client
   res.setHeader('Content-disposition', 'attachment; filename=' + fileName);
