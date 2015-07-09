@@ -10,14 +10,11 @@
           data: function(data) {
             data.result.unshift({
               Name: 'None',
-              CSSFile: ''
+              CSSFileName: ''
             });
 
             return data.result;
           }
-        },
-        change: function() {
-          console.log(this.view());
         }
       }),
       changeTitle: function () {
